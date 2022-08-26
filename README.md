@@ -8,7 +8,11 @@
 
 Then run the followin command with any nicknane
 
-`Identicon.main("username")`
+`Identicon.main("Apple")`
+
+### Result
+
+![img](Apple.png)
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
