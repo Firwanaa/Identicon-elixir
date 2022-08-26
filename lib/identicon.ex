@@ -5,6 +5,7 @@ defmodule Identicon do
 
   @doc """
     Receives a string, generates an image and saves it to the disk.
+
     ## Examples
       iex> Identicon.main("some nickname")
       :ok
@@ -41,6 +42,9 @@ defmodule Identicon do
     :egd.render(image)
   end
 
+  @doc """
+    Creates a pixel map.
+  """
   def build_pixel_map(%Identicon.Image{grid: grid} = image) do
     pixel_map =
       Enum.map(grid, fn {_code, index} ->
@@ -56,6 +60,9 @@ defmodule Identicon do
     %Identicon.Image{image | pixel_map: pixel_map}
   end
 
+  @doc """
+    Filters squares based on odd numbers.
+  """
   def filter_odd_squares(%Identicon.Image{grid: grid} = image) do
     grid =
       Enum.filter(grid, fn {code, _index} ->
@@ -65,6 +72,9 @@ defmodule Identicon do
     %Identicon.Image{image | grid: grid}
   end
 
+  @doc """
+    Creates an image and colors it.
+  """
   def build_grid(%Identicon.Image{hex: hex} = image) do
     grid =
       hex
@@ -76,16 +86,25 @@ defmodule Identicon do
     %Identicon.Image{image | grid: grid}
   end
 
+  @doc """
+    Creating a mirrored grid.
+  """
   def mirror_row(row) do
     [first, second | _tail] = row
 
     row ++ [second, first]
   end
 
+  @doc """
+    Stores RGB colors to the image struct.
+  """
   def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
     %Identicon.Image{image | color: {r, b, g}}
   end
 
+  @doc """
+    Hasing a string using MD5, and save the hash to the `image` stuct.
+  """
   def hash_input(input) do
     hex =
       :crypto.hash(:md5, input)
