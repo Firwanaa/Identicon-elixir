@@ -1,6 +1,6 @@
 # Identicon
 
-**A program generates a random profile pixel**
+**A program generates a random profile pixel image**
 
 ## To run from terminal
 
