@@ -14,7 +14,7 @@ Then run the followin command with any nicknane
 
 ![img](Apple.png)
 
-> note: To generate Docs using mix `mix docs`
+> note: To generate Docs using mix `mix docs`.
 > To run test using mix `mix test`
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
