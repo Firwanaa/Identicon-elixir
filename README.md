@@ -6,7 +6,7 @@
 
 `iex -S mix`
 
-Then run the followin command with any nicknane
+Then run the followin command with any nickname
 
 `Identicon.main("Apple")`
 
