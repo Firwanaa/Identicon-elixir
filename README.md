@@ -2,7 +2,7 @@
 
 **A program generates a random profile pixel**
 
-## To use from terminal
+## To run from terminal
 
 `iex -S mix`
 
