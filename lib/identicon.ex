@@ -1,16 +1,13 @@
 defmodule Identicon do
   @moduledoc """
-  Documentation for `Identicon`.
+  Provides a tool to generate a random profile image.
   """
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Identicon.hello()
-      :world
-
+    Receives a string, generates an image and saves it to the disk.
+    ## Examples
+      iex> Identicon.main("some nickname")
+      :ok
   """
   def main(input) do
     input
@@ -23,10 +20,16 @@ defmodule Identicon do
     |> save_image(input)
   end
 
+  @doc """
+    Saves an image to the local disk.
+  """
   def save_image(image, input) do
     File.write("#{input}.png", image)
   end
 
+  @doc """
+    Creates an image and colors it.
+  """
   def draw_image(%Identicon.Image{color: color, pixel_map: pixel_map}) do
     image = :egd.create(250, 250)
     fill = :egd.color(color)
